@@ -11,11 +11,11 @@ def bigger_price(limit: int, data: list) -> list:
     return q
 
 
-# if __name__ == '__main__':
-#     print('Example:')
-#     pprint(bigger_price(2, [
-#         {"name": "bread", "price": 100},
-#         {"name": "wine", "price": 138},
-#         {"name": "meat", "price": 15},
-#         {"name": "water", "price": 1}
-#     ]))
+if __name__ == '__main__':
+    print('Example:')
+    pprint(bigger_price(2, [
+        {"name": "bread", "price": 100},
+        {"name": "wine", "price": 138},
+        {"name": "meat", "price": 15},
+        {"name": "water", "price": 1}
+    ]))
