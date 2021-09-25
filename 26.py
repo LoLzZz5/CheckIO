@@ -13,18 +13,30 @@ def sun_angle(time: str) -> Union[int, str]:
     else:
     	hour = int(hour)
 
+    if hour >= 6 and hour <= 18:
+        angle = (hour - 6) * 15
+        return min(angle, minute)
+    else:
+        return "I don't see the sun!"
+
+def min(angle: int, minute: int):
     if minute[0] == '0':
-    	minute = int(minute[1])
+      minute = int(minute[1])
     else:
-    	minute = int(minute) 
+      minute = int(minute)
 
-    if hour > 6 and hour < 18 :
-    	return (hour - 6) * 15 + minute * 0.25
-
+    if angle == 180.0 and minute > 0:
+        return "I don't see the sun!"
     else:
-    	return "I don't see the sun!"
+        if angle == 180.0 and minute == 0:
+            return angle
+        else:
+            return angle + minute * 1/4
   
 if __name__ == '__main__':
     print("Example:")
+    print(sun_angle("06:00"))# == 0
     print(sun_angle("07:00"))# == 15
     print(sun_angle("01:23"))# == "I don't see the sun!"
+    print(sun_angle("18:00"))# == 180
+    print(sun_angle("18:23"))# == "I don't see the sun!"
