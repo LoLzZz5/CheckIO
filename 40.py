@@ -1,3 +1,4 @@
+#Проверить, является ли строка панграммом
 import string
 
 def check_pangram(text):
